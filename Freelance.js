@@ -7,7 +7,9 @@ const freelancer = [
     ];
 console.log(freelancer)
 
-// function price() {}
+function price() {
+    
+}
 
 
 // const initFree = document.querySelector()
