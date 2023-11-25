@@ -16,6 +16,8 @@ const data = [
 renderTable(data)
 
 const freelancers = [
+    {name: "Alice", price: 30, occupcation: "writer"},
+    {name: "Bob", price: 50, occupcation: "teacher"},
     {name: "Carol", price: 70, occupcation: "programmer"},
     {name: "Pimp Name Slickback", price: 150, occupcation: "pimping"},
     {name: "Barney", price: 80, occupcation: "babysitter"},
@@ -26,7 +28,7 @@ const freelancers = [
     ];
 console.log(freelancers);
 
-let dataIndex = 0;
+let dataIndex = 2;
 const updateInterval = 1000;
 
 
@@ -47,7 +49,7 @@ setInterval(() => {
         const sum = data.concat(freelancers.slice(0, dataIndex)).reduce((acc, item) => acc + item.price, 0);
 
         // Display the updated sum in the designated cell
-        const sumCell = document.getElementById('sumCell');
-        sumCell.textContent = sum;
+        const sumCell = document.getElementById('avgCell');
+        sumCell.textContent = Math.ceil(sum / freelancers.length);
     }
 }, updateInterval);
