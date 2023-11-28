@@ -4,7 +4,7 @@ function renderTable(data) {
 
     data.forEach(item => {
         const row = document.createElement('tr');
-        row.innerHTML = `<td>${item.name}</td><td>${item.price}</td><td>${item.occupcation}</td>`;
+        row.innerHTML = `<td>${item.name}</td><td>${"$"+ item.price}</td><td>${item.occupcation}</td>`;
         tbody.appendChild(row);
     });  
 }
@@ -41,7 +41,7 @@ setInterval(() => {
         
         const tbody = document.querySelector('#freelance tbody');
         const newRow = document.createElement('tr');
-        newRow.innerHTML = `<td>${newItem.name}</td><td>${newItem.price}</td><td>${newItem.occupcation}</td>`;
+        newRow.innerHTML = `<td>${newItem.name}</td><td>${"$"+ newItem.price}</td><td>${newItem.occupcation}</td>`;
         tbody.appendChild(newRow);
 
         dataIndex++;
@@ -50,6 +50,6 @@ setInterval(() => {
 
         // Display the updated sum in the designated cell
         const sumCell = document.getElementById('avgCell');
-        sumCell.textContent = Math.ceil(sum / freelancers.length);
+        sumCell.textContent = "$" + Math.ceil(sum / freelancers.length);
     }
 }, updateInterval);
